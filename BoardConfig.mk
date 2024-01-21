@@ -102,9 +102,9 @@ BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
-TARGET_KERNEL_SOURCE := kernel/xiaomi/munch
-TARGET_KERNEL_CONFIG := munch_defconfig
-#TARGET_KERNEL_LLVM_BINUTILS := false
+TARGET_NO_KERNEL := false
+BOARD_PREBUILT_DTBIMAGE_DIR := $(TARGET_KERNEL_DIR)
+BOARD_PREBUILT_DTBOIMAGE := $(BOARD_PREBUILT_DTBIMAGE_DIR)/dtbo.img
 
 # Lineage Health
 TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_BYPASS := false
@@ -142,7 +142,6 @@ $(foreach p, $(call to-upper, $(TREBLE_PARTITIONS)), \
 
 # Platform
 BOARD_VENDOR := xiaomi
-BOARD_USES_QCOM_HARDWARE := true
 TARGET_BOARD_PLATFORM := kona
 
 # Power
@@ -197,8 +196,7 @@ BOARD_MOVE_GSI_AVB_KEYS_TO_VENDOR_BOOT := true
 
 # VINTF
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
-    $(DEVICE_PATH)/configs/vintf/framework_compatibility_matrix.xml \
-    vendor/aosp/config/device_framework_matrix.xml
+    $(DEVICE_PATH)/configs/vintf/framework_compatibility_matrix.xml
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/configs/vintf/manifest.xml
 DEVICE_MATRIX_FILE += $(DEVICE_PATH)/configs/vintf/compatibility_matrix.xml
 ODM_MANIFEST_SKUS += nfc

@@ -291,7 +291,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/kona-mtp-snd-card_Button_Jack.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/kona-mtp-snd-card_Button_Jack.kl
 
 # Kernel
-PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
+TARGET_KERNEL_DIR ?= device/xiaomi/munch-kernel
+LOCAL_KERNEL := $(TARGET_KERNEL_DIR)/Image
+
+PRODUCT_COPY_FILES += $(LOCAL_KERNEL):kernel
 
 # Keylayout
 PRODUCT_COPY_FILES += \
@@ -402,6 +405,10 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 # Perf
 PRODUCT_PACKAGES += \
     libqti-perfd-client
+
+# Platform
+PRODUCT_BOARD_PLATFORM := kona
+PRODUCT_USES_QCOM_HARDWARE := true
 
 # Power
 PRODUCT_PACKAGES += \
