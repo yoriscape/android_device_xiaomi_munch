@@ -1,6 +1,5 @@
 # Audio
 ro.config.media_vol_default=8
-ro.config.media_vol_steps=25
 
 # Adaptive Suspend
 suspend.short_suspend_threshold_millis=2000
