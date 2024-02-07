@@ -4,6 +4,8 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+PRODUCT_BROKEN_VERIFY_USES_LIBRARIES := true
+
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
@@ -412,7 +414,8 @@ PRODUCT_USES_QCOM_HARDWARE := true
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service.xiaomi-libperfmgr
+    android.hardware.power-service.xiaomi-libperfmgr \
+    android.hardware.power@1.2.vendor
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/perf/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
