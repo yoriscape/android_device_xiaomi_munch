@@ -547,4 +547,4 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product, vendor/xiaomi/munch/munch-vendor.mk)
 
 # Call the MiuiCamera setup
-$(call inherit-product-if-exists, vendor/xiaomi/camera/miuicamera.mk)
+$(call inherit-product-if-exists, vendor/xiaomi/miuicamera/miuicamera.mk)
