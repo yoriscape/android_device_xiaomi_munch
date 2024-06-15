@@ -187,10 +187,6 @@ PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-impl \
     android.hardware.ir@1.0-service
 
-# Device-specific settings
-PRODUCT_PACKAGES += \
-    XiaomiParts
-
 # Dex
 PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := verify
 
@@ -294,10 +290,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/kona-mtp-snd-card_Button_Jack.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/kona-mtp-snd-card_Button_Jack.kl
 
 # Kernel
-TARGET_KERNEL_DIR ?= device/xiaomi/munch-kernel
-LOCAL_KERNEL := $(TARGET_KERNEL_DIR)/Image
-
-PRODUCT_COPY_FILES += $(LOCAL_KERNEL):kernel
+PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
 
 # Keylayout
 PRODUCT_COPY_FILES += \
@@ -409,10 +402,6 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_PACKAGES += \
     libqti-perfd-client
 
-# Platform
-PRODUCT_BOARD_PLATFORM := kona
-PRODUCT_USES_QCOM_HARDWARE := true
-
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service.xiaomi-libperfmgr \
@@ -484,7 +473,7 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/google/interfaces \
     hardware/google/pixel \
-    vendor/hardware/xiaomi \
+    hardware/xiaomi \
     vendor/qcom/opensource/usb/etc
 
 # Telephony
