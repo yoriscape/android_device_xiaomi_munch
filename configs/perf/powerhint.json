@@ -310,6 +310,16 @@
       "Type": "Property"
     },
     {
+      "Name": "DoubleTapToWake",
+      "Path": "/sys/touchpanel/double_tap",
+      "Values": [
+        "0",
+        "1"
+      ],
+      "DefaultIndex": 0,
+      "ResetOnInit": true
+    },
+    {
       "Name": "Dex2oatThreads",
       "Path": "vendor.powerhal.dalvik.vm.dex2oat-threads",
       "Values": [
@@ -622,6 +632,12 @@
       "Node": "CPUBigClusterMaxFreq",
       "Duration": 0,
       "Value": "1478401"
+    },
+    {
+      "PowerHint": "DOUBLE_TAP_TO_WAKE",
+      "Node": "DoubleTapToWake",
+      "Duration": 0,
+      "Value": "1"
     }
   ]
 }
