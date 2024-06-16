@@ -358,6 +358,9 @@ MultitouchMinDistance=1px
 TapInterval=1ms
 TapSlop=1px
 
+# TouchFeature
+ro.vendor.touchfeature.type=59
+
 # Telephony
 telephony.active_modems.max_count=2
 
